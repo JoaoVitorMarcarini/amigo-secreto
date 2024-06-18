@@ -6,7 +6,9 @@ function adicionar(){
     if(nomeAmigo == ''){
         alert('Por favor digite um nome.')
         return
-    }else if (listaAmigos.textContent.includes(nomeAmigo)){
+    }
+    
+    if (lista.includes(nomeAmigo)){
         alert('Nome já incluido no sorteio, por favor digite um nome diferente.')
         document.getElementById('nome-amigo').value = ''
         return
@@ -24,10 +26,10 @@ function adicionar(){
 }
 
 function sortear(){
-    if(lista.length < 2){
-        alert('Número de participantes insuficiente')
+    if(lista.length < 4){
+        alert('Número mínimo participantes é igual a 4!')
         return;
-    }else{
+    }
         let Sorteio = document.getElementById('lista-sorteio')
         embaralha(lista)
         for(let i = 0; i < lista.length; i++){
@@ -38,9 +40,6 @@ function sortear(){
             }
             
         }
-    }
-   
-
 }
 
 function reiniciar(){
