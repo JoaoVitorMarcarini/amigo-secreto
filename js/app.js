@@ -3,12 +3,12 @@ let lista = []
 function adicionar(){
     let nomeAmigo = document.getElementById('nome-amigo').value
     let listaAmigos = document.getElementById('lista-amigos')
-    if (listaAmigos.textContent.includes(nomeAmigo)){
+    if(nomeAmigo == ''){
+        alert('Por favor digite um nome.')
+        return
+    }else if (listaAmigos.textContent.includes(nomeAmigo)){
         alert('Nome já incluido no sorteio, por favor digite um nome diferente.')
         document.getElementById('nome-amigo').value = ''
-        return
-    } else if(nomeAmigo == ''){
-        alert('Por favor digite um nome.')
         return
     }
     
